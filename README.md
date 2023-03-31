@@ -3,7 +3,7 @@
 This is an Internship Assignment which includes creation of Blog Website and a markdown parser for Blog Post.
 
 ## Functionalities
-It includes two pages one Home and other CreatePost page to create a Blog from Markdown to HTML.
+It includes two pages one Home, CreatePost page to create a Blog from Markdown to HTML and both are fully responsive.
 #### Home Page
  It is made as per the design given in the assignment. It includes a Carousel which shows best blogs, list of latest blogs, and a Load More button which on a click renders two more blogs, Home button which navigates to Home Page, Header and Footer.
 #### Create Post Page
