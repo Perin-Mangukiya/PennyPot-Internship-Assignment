@@ -48,7 +48,7 @@ export default class Carousel extends Component {
 
 const CarouselWrapper = styled.div`
     color: white;
-    width: 800px;
+    width: 65%;
     margin: auto;
     height: 100%;
     padding-top: 50px;

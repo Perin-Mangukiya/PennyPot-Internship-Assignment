@@ -9,7 +9,7 @@ function Header() {
             <img src="logo.png" alt="" />
         </Logo>
         <NavigationLink>
-            <a href="">Home</a>
+            <a href="/">Home</a>
             <a href="">Tags</a>
         </NavigationLink>
         

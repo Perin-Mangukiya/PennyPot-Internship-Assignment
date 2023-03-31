@@ -56,7 +56,10 @@ function App() {
             <hr style={{width: '100px', marginTop: '-10px', marginInline: 'auto'}}/>
           </span>
           {blogData.map((item)=> <SingleBlog {...item} rdr = {rdr} /> )}
-          <button className='load-more' onClick={handleClickLoad}>Load More</button>
+          <div className='load-more-div'>
+            <button className='load-more' onClick={handleClickLoad}>Load More</button>
+
+          </div>
         </BlogList>
       </SecondWrapper>
     </div>
@@ -83,12 +86,14 @@ const BlogList = styled.div`
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   position: absolute;
   top: -100px;
-  left: 150px;
-  right: 150px;
+  left: 10vw;
+  right: 10vw;
 
   border-radius: 10px;
   z-index: 10;
-
+  .load-more-div{
+    text-align: center;
+  }
   .load-more {
     color: white;
     border-radius: 20px;
@@ -97,6 +102,5 @@ const BlogList = styled.div`
     width: 120px;
     margin-bottom: 80px;
     background-color: #555555;
-    margin-left: 45%;
     }
 `

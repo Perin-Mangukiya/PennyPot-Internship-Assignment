@@ -9,7 +9,7 @@ function SingleBlog({ id, title, img, desc , rdr }) {
         <Wrapper>
             <h2 style={{ fontSize: '28px' }}>{title}</h2>
             <p style={{ fontSize: '10px' }}>Investing | 5 minute read</p>
-            {img ?  <img onLoad={rdr} className='post-image' style={{ borderRadius: '8px', paddingBottom: '5px' }} src={img} alt="" /> : <></>}
+            {img ?  <img onLoad={rdr} className='post-image' style={{ width: '80%', borderRadius: '8px', marginBottom: '5px'}} src={img} alt="" /> : <></>}
             <div style={{ fontWeight: '250px' }}>
                 {desc}
             </div>
