@@ -1,16 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function SingleBlog({id, title, img, desc}) {
+
+function SingleBlog({ id, title, img, desc , rdr }) {
+
+
     return (
         <Wrapper>
-            <h2 style={{fontSize: '28px'}}>{title}</h2>
-            <p style={{fontSize: '10px'}}>Investing | 5 minute read</p>
-            {img ? <img style={{borderRadius: '8px', paddingBottom: '5px'}} src={img} alt="" /> : <></>}
-            <div style={{fontWeight: '250px'}}>
+            <h2 style={{ fontSize: '28px' }}>{title}</h2>
+            <p style={{ fontSize: '10px' }}>Investing | 5 minute read</p>
+            {img ?  <img onLoad={rdr} className='post-image' style={{ borderRadius: '8px', paddingBottom: '5px' }} src={img} alt="" /> : <></>}
+            <div style={{ fontWeight: '250px' }}>
                 {desc}
             </div>
             <button>Read Now</button>
+            
         </Wrapper>
     )
 }

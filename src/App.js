@@ -5,22 +5,42 @@ import SingleBlog from './Components/SingleBlog';
 import { useEffect, useState } from 'react';
 import Data from './data';
 
+  
+
 function App() {
-  console.log(window);
+
   const [size, setSize] = useState(window.innerWidth);
+  const [blogData, setBlogData] = useState(Data.slice(0, 3));
 
-  const checkSize = () => {
-    setSize(window.innerWidth);
-  };
+   const rdr =  function render(){
 
-  useEffect(()=>{
+
+    const checkSize = () => {
+      setSize(window.innerWidth);
+    };
+  
     window.addEventListener('resize', checkSize);
     var content=document.querySelector('.content');
     var container=document.querySelector('.child-container');
     content.style.height=container.offsetHeight + 'px';
-    return () => { // clean up function
-      window.removeEventListener('resize', checkSize);
+    if(Data){
+      return () => {
+        // clean up function
+        window.removeEventListener('resize', checkSize);
+      }
+  
     }
+  
+  }
+
+  function handleClickLoad() {
+    setBlogData(Data.slice(0, blogData.length + 2))
+  }
+ 
+
+  useEffect(()=>{ 
+    console.log("called")
+    rdr();
   });
 
   return (
@@ -28,16 +48,15 @@ function App() {
     <div className="App">
       <FirstWrapper>
         <Carousel/>
-        
       </FirstWrapper>
       <SecondWrapper className='content'>
       <BlogList className='child-container'>
           <span>
             <p style={{textAlign: 'center', paddingTop: '50px'}}>Latest Insights</p>
-            <hr style={{width: '100px', marginTop: '-10px'}}/>
+            <hr style={{width: '100px', marginTop: '-10px', marginInline: 'auto'}}/>
           </span>
-          {Data.map((item)=><SingleBlog {...item} />)}
-          <button className='load-more'>Load More</button>
+          {blogData.map((item)=> <SingleBlog {...item} rdr = {rdr} /> )}
+          <button className='load-more' onClick={handleClickLoad}>Load More</button>
         </BlogList>
       </SecondWrapper>
     </div>

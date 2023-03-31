@@ -10,7 +10,8 @@ export default class Carousel extends Component {
         const settings = {
             dots: true,
             infinite: true,
-            speed: 100,
+            autoplaySpeed: 2000,
+            autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
@@ -23,21 +24,22 @@ export default class Carousel extends Component {
                         <p>File Name*|2 Min Read</p>
                         <button>Read Now</button>
                     </div>
-                    <div>
-                        <h3>2</h3>
+                    <div className="carousel-data">
+                        <h1>Mastering Finances: Expert tips and Tricks to achieve your financial goals</h1>
+                        <p>File Name*|2 Min Read</p>
+                        <button>Read Now</button>
                     </div>
-                    <div>
-                        <h3>3</h3>
+                    <div className="carousel-data">
+                        <h1>Mastering Finances: Expert tips and Tricks to achieve your financial goals</h1>
+                        <p>File Name*|2 Min Read</p>
+                        <button>Read Now</button>
                     </div>
-                    <div>
-                        <h3>4</h3>
+                    <div className="carousel-data">
+                        <h1>Mastering Finances: Expert tips and Tricks to achieve your financial goals</h1>
+                        <p>File Name*|2 Min Read</p>
+                        <button>Read Now</button>
                     </div>
-                    <div>
-                        <h3>5</h3>
-                    </div>
-                    <div>
-                        <h3>6</h3>
-                    </div>
+                    
                 </Slider>
             </CarouselWrapper>
         );
